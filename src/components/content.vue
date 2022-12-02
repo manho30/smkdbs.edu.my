@@ -3,9 +3,9 @@
 
     <!-- create a container with grey background -->
     <div class="bg-gray-100 rounded-md p-4">
-      <div class="flex flex-col md:flex-row">
+      <div class="flex flex-col md:flex-row ml-4">
         <div class="md:w-1/2">
-          <h1 class="font-bold text-gray-800 lg:text-4xl md:text-3xl sm:text-3xl">
+          <h1 class="font-bold text-gray-800 lg:text-3xl md:text-2xl sm:text-xl">
             Event </h1>
           <p class="text-gray-700 text-sm mb-5">Event will be held in SMK Dato Bijaya Setia </p>
 
