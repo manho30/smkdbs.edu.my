@@ -11,7 +11,6 @@
         <img src="../assets/logo.png" alt="Lencana SMK DATO BIJAYA SETIA"
              className="max-w-full h-auto lg:block" height="33" width="45">
       </div>
-
       <div id="title" className="ml-2">
         <h1 className="font-inherit font-extrabold mt-1 text-gray-800 lg:text-3xl md:text-2xl sm:text-xl">
           SMK DATO BIJAYA SETIA</h1>
@@ -19,7 +18,6 @@
     </a>
   </div>
 </template>
-
 <script>
   export default {
     name: 'header-container'

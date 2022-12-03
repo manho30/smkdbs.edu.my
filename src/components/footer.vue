@@ -18,21 +18,17 @@
           <p class="max-w-xs mt-4 text-gray-500 text-1xl font-bold">
             "BERTEKUN HINNGA BERJAYA"
           </p>
-
           <p class = 'ml-2 mt-5 text-gray-600 text-lg'>
             created with ❤ by <a href="https://manho30.me">manho</a>
           </p>
         </div>
       </div>
-
       <p class="text-base text-gray-500 font-bold">
         &copy; 2022. SMK DATO BIJAYA SETIA. All rights reserved.
       </p>
     </div>
   </footer>
-
 </template>
-
 <script>
 export default {
   name: 'footer-container'
