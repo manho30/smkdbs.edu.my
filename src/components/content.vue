@@ -39,8 +39,8 @@
     <div class="flex flex-col md:flex-row ml-4">
       <div class="md:w-1/2">
         <h1 class="font-bold text-gray-800 lg:text-3xl md:text-2xl sm:text-xl">
-          Penguguman </h1>
-        <p class="text-gray-700 text-sm mb-5 lg:text-lg md:text-base sm:text-sm"> Penguguman disampaikan oleh pentadbir</p>
+          Pengumuman </h1>
+        <p class="text-gray-700 text-sm mb-5 lg:text-lg md:text-base sm:text-sm"> Pengumuman disampaikan oleh pentadbir</p>
         <ol class="relative border-l border-gray-200 dark:border-gray-700">
           <li class="mb-10 ml-4">
             <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
@@ -67,7 +67,7 @@ export default {
   },
   methods: {
     isPassedFunction(){
-      return isEventPassed('2022-12-07');
+      return isEventPassed('2022-12-01');
     }
   },
 };
