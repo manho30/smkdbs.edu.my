@@ -1,68 +1,67 @@
 <template>
   <div class="content-container mt-10">
     <!-- create a container with grey background -->
-    <div class="bg-gray-100 rounded-md p-4">
+    <div class="bg-white rounded-md p-4">
       <div class="flex flex-col md:flex-row ml-4">
         <div class="md:w-1/2">
-          <h1 class="font-bold text-gray-800 lg:text-3xl md:text-2xl sm:text-xl">
+          <h1 class="font-bold text-2xl text-gray-800 md:text-3xl sm:text-2xl">
             Event </h1>
-          <p class="text-gray-700 text-sm mb-5 lg:text-lg md:text-base sm:text-sm">Event will be held in SMK Dato Bijaya
+          <p class="text-gray-700 text-sm mb-5 ml-0.5 lg:text-lg md:text-base sm:text-sm">Event will be held in SMK Dato Bijaya
             Setia </p>
-          <ol class="relative border-l border-gray-200 dark:border-gray-700">
-            <li class="mb-10 ml-4">
-              <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-              <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">7/12/2022</time>
-              <h3 class="text-lg font-semibold text-black-500">Pertandingan Kawad Kaki</h3>
-              <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Pertandingan kawad kaki antara
-                peringkat sekolah.</p>
-            </li>
-            <li class="mb-10 ml-4">
-              <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-              <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">7/12/2022</time>
-              <h3 class="text-lg font-semibold text-black-500">Aktiviti RIMUP</h3>
-            </li>
-            <li class="mb-10 ml-4">
-              <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-              <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">1/12/2022</time>
-              <h3 v-if='isPassed === true' class="text-lg font-semibold text-red-600">Pertandingan Bola Sepak Sesi Pagi [TAMAT]</h3>
-              <h3 v-else class="text-lg font-semibold text-black-500">Pertandingan Bola Sepak Sesi Pagi</h3>
-              <p v-if="isPassed === true" class="mb-4 text-base font-normal text-red-600">Pertandingan bola sepak antara peringkat sekolah.</p>
-              <p v-else class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Pertandingan bola sepak antara peringkat sekolah.</p>
-            </li>
-          </ol>
+          <div class="event" v-if="event_list.length >= 1">
+            <ol class="relative border-l border-gray-200 dark:border-gray-700">
+              <li v-for="index in event_list" :key="index" class="mb-10 ml-4">
+                <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+                <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">{{index.date}}</time>
+                <h3 class="text-lg font-semibold text-black-500">{{index.title}}</h3>
+                <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">{{index.description}}</p>
+              </li>
+            </ol>
+          </div>
+          <div class="flex bg-yellow-100 rounded-lg p-4 mb-4 text-sm text-yellow-700" role="alert">
+            Tidak ada aktiviti yang akan dijalankan
+          </div>
         </div>
       </div>
     </div>
   </div>
   <div class="mt-5 mb-5"></div>
-  <div class="bg-gray-100 rounded-md p-4">
+  <div class="bg-white rounded-md p-4">
     <div class="flex flex-col md:flex-row ml-4">
       <div class="md:w-1/2">
-        <h1 class="font-bold text-gray-800 lg:text-3xl md:text-2xl sm:text-xl">
+        <h1 class="font-bold text-2xl text-gray-800 md:text-3xl sm:text-2xl">
           Pengumuman </h1>
-        <p class="text-gray-700 text-sm mb-5 lg:text-lg md:text-base sm:text-sm"> Pengumuman disampaikan oleh pentadbir</p>
-        <ol class="relative border-l border-gray-200 dark:border-gray-700">
-          <li class="mb-10 ml-4">
-            <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-            <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">23/11/2022</time>
-            <h3 class="text-lg font-semibold text-black-500">Cuti sekolah</h3>
-            <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Cuti sekolah
-              akan diadakan pada 10/12/2022 hingga 3/1/2023.
-              Sepanjang waktu cuti semua pelajar sesi pagi dikendaki
-              datang ke sekolah untuk kelas tambahan.</p>
-          </li>
-        </ol>
+        <p class="text-gray-700 text-sm mb-5 ml-0.5 lg:text-lg md:text-base sm:text-sm"> Pengumuman disampaikan oleh pentadbir</p>
+        <div class="announcement" v-if="announcement_list.length >=1">
+          <ol class="relative border-l border-gray-200 dark:border-gray-700">
+            <li v-for="index in announcement_list" :key="index" class="mb-10 ml-4">
+              <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+              <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">{{index.date}}</time>
+              <h3 class="text-lg font-semibold text-black-500">{{index.title}}</h3>
+              <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">{{index.description}}</p>
+            </li>
+          </ol>
+        </div>
+        <div v-else>
+          <div class="flex bg-yellow-100 rounded-lg p-4 mb-4 text-sm text-yellow-700" role="alert">
+            Tidak ada pengumuman yang diterbitkan.
+          </div>
+        </div>
       </div>
     </div>
   </div>
+  <div class="mt-5 mb-5"></div>
 </template>
+
 <script>
 import {isEventPassed} from "@/helper/event";
 export default {
   name: "content-container",
   data() {
     return {
-      isPassed: this.isPassedFunction()
+      isPassed: this.isPassedFunction(),
+      announcement_list: [],
+      event_list: [],
     };
   },
   methods: {
