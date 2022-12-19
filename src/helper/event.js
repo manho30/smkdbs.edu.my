@@ -20,7 +20,7 @@ const isEventPassed = (event_date, event_time='00:00') => {
 
 
 /** for debug only! */
-console.log(isEventPassed('2021-12-02', '17:00'));
+// console.log(isEventPassed('2021-12-02', '17:00'));
 
 module.exports = {
     isEventPassed

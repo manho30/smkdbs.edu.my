@@ -15,7 +15,7 @@ import axios from "axios";
  * @param data
  * @returns {Promise<AxiosResponse<T>>}
  */
-export default function request(url, method, data) {
+export default function _request(url, method, data) {
     return axios({
         url,
         method,

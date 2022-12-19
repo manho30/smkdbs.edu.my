@@ -1,4 +1,32 @@
 <!DOCTYPE html>
+<!--
+@author: Man Ho
+@created: 2022
+@updated: 2022
+@version: 1.0
+
+
+UI/UX Design: Tailwind CSS
+Backend: Node.js
+Frontend: Vue.js
+
+
+
+DON'T STEAL MY CODE, I SPENT A LOT OF TIME TO MAKE THIS.
+
+Contributions and PR are welcome.
+https://github.com/manho30/smkdbs.edu.my
+
+
+
+
+   _____                 . . . . . o o o o o
+  __|[_]|__ ___________ _______    ____      o
+ |[] [] []| [] [] [] [] [_____(__  ][]]_n_n__][.
+_|________|_[_________]_[________]_|__|________)<
+  oo    oo 'oo      oo ' oo    oo 'oo 0000---oo\_
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
 <html lang="">
   <head>
     <meta charset="utf-8">
@@ -15,19 +43,11 @@
   </head>
   <body>
     <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue or considerly update your browser.</strong>
     </noscript>
     <div id="app" class="bg-gray-100"></div>
     <script>
-
-        const ip = fetch('https://api.ipify.org?format=json')
-        .then(response => response.json())
-        .then(data => {
-            console.log(`%cYour details: ${window.navigator.userAgent} \n\nYour IP adress: ${data.ip}`, 'color: red; font-size: 20px; font-weight: bold;')
-        })
-        alert('This website is still under development. Please do not use it for any purpose. Thank you.')
-        console.log('%cDO NOT TRY TO ATTACK THIS PAGE! ', 'color: red; font-size: 20px; font-weight: bold;')
-        console.log('%cTHIS PAGE IS UNDER PROTECTED!', 'color: green; font-size: 20px; font-weight: bold;')
+        const ip = fetch('https://api.ipify.org?format=json').then(response => response.json()).then(data => {console.log(`%cYour details: ${window.navigator.userAgent} \n\nYour IP adress: ${data.ip}`, 'color: red; font-size: 20px; font-weight: bold;')});alert('This website is still under development. Please do not use it for any purpose. Thank you.');console.log('%cDO NOT TRY TO ATTACK THIS PAGE! ', 'color: red; font-size: 20px; font-weight: bold;'); console.log('%cTHIS PAGE IS UNDER PROTECTED!', 'color: green; font-size: 20px; font-weight: bold;')
     </script>
   </body>
 </html>

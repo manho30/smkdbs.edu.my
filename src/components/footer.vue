@@ -18,19 +18,40 @@
           <p class="max-w-xs mt-4 text-gray-500 text-1xl font-bold">
             "BERTEKUN HINGA BERJAYA"
           </p>
-          <p class = 'ml-2 mt-5 text-gray-600 text-lg'>
-            created by <a href="https://manho30.me">manho</a>
-          </p>
         </div>
       </div>
-      <p class="text-base text-gray-500 font-bold">
-        &copy; 2022. SMK DATO BIJAYA SETIA. All rights reserved.
-      </p>
+      <div class="text-base text-gray-500 font-bold">
+        <p class="text-1xl font-bold">
+          © {{year_now}} SMK Dato Bijaya Setia<br v-if="isMobile"> All rights reserved.
+        </p>
+      </div>
     </div>
   </footer>
 </template>
 <script>
 export default {
-  name: 'footer-container'
+  name: 'footer-container',
+  data() {
+    return {
+      year_now: this._getCurrentYear(),
+      isMobile: this._isMobile()
+    }
+  },
+  methods: {
+    /**
+     * @returns {boolean}
+     * @private
+     */
+    _isMobile() {
+      return window.innerWidth <= 768;
+    },
+    /**
+     * @returns {number}
+     * @private
+     */
+    _getCurrentYear() {
+      return new Date().getFullYear();
+    }
+  }
 }
 </script>
