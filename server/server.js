@@ -29,11 +29,15 @@ function serveBackendAPI (port=3000){
     app.use(express.static('../dist'));
 
     app.get('/api/event', (req, res) => {
-        res.status(200).json([
-            {'date': '2021-12-18', 'title': 'Christmas', 'description': 'Christmas is an annual festival commemorating the birth of Jesus Christ, observed most commonly on December 25 as a religious and cultural celebration among billions of people around the world. A feast central to the Christian liturgical year, it is preceded by the season of Advent or the Nativity Fast and initiates the season of Christmastide, which historically in the West lasts twelve days and culminates on Twelfth Night; in some traditions, Christmastide includes an Octave. Christmas Day is a public holiday in many of the world\'s nations, is celebrated culturally by a large number of non-Christian people, and is an integral part of the holiday season centered around it.'},
-            {'date': '2021-12-25', 'title': 'Christmas', 'description': 'Christmas is an annual festival commemorating the birth of Jesus Christ, observed most commonly on December 25 as a religious and cultural celebration among billions of people around the world. A feast central to the Christian liturgical year, it is preceded by the season of Advent or the Nativity Fast and initiates the season of Christmastide, which historically in the West lasts twelve days and culminates on Twelfth Night; in some traditions, Christmastide includes an Octave. Christmas Day is a public holiday in many of the world\'s nations, is celebrated culturally by a large number of non-Christian people, and is an integral part of the holiday season centered around it.'}
-
-        ])
+        res.status(200).json({
+            'ok': true,
+            'status': 200,
+            'result': [
+                {'date': '2021-12-18', 'title': 'test1', 'description': 'test1'},
+                {'date': '2021-12-25', 'title': 'test2', 'description': 'test2'},
+                {'date': '2021-12-31', 'title': 'test3', 'description': 'test3'},
+            ]
+        })
     })
 
     app.listen(port, () => {

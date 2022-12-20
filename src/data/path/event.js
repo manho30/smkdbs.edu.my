@@ -6,22 +6,26 @@
  * @IDE         : WebStorm
  */
 
-// import _request from "../helper/request";
+import _request from "../helper/request";
+import {domain} from "./domain.global";
 
 /**
  * @Description : Get event data from backend
- * @param params
  * @returns {Promise<axios.AxiosResponse<>>|*}
  */
-export function getEventList (params=null) {
-    /** for debug only! */
-    console.log('Fetch URL is working with: ', params);
-    return [
-        {
-            'date': '2021-12-02',
-            'time': '17:00',
-            'title': 'test! ',
-            'description': 'test!',
-        }
-    ]//_request('/event', 'get', params);
+function getEventList () {
+    return _request(`${domain.domain}/api/event`, 'GET');
+}
+
+/**
+ * @Description : Get announcement data from backend
+ * @returns {Promise<axios.AxiosResponse<>>|*}
+ */
+function getAnnouncementList () {
+    return _request(`${domain.domain}/api/announcement`, 'GET');
+}
+
+export {
+    getEventList,
+    getAnnouncementList,
 }
