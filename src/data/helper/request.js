@@ -11,15 +11,9 @@ import axios from "axios";
 /**
  * @Description : Request data from backend
  * @param url
- * @param method
- * @param data
  * @returns {Promise<AxiosResponse<>>}
  * @private
  */
-export default function _request(url, method, data) {
-    return axios({
-        url,
-        method,
-        data
-    });
+export default function _request(url) {
+    return axios.get(url)
 }

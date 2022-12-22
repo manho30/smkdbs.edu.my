@@ -13,8 +13,9 @@
  * @private
  */
 function _parseList (data){
-    console.log(data);
-    return data.result ? data.result : [];
+    data.then((res) => {
+        return res.result
+    })
 }
 
 export default _parseList;

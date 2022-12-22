@@ -16,7 +16,7 @@ import _parseList from "./helper/parse";
  * @private
  */
 function _getEventList () {
-        return _request(`${domain.domain}/event`, 'GET');
+        return _request(`${domain.domain}/event`);
 }
 
 /**

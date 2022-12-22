@@ -1,0 +1,1 @@
+ignores: ["@babel/core","@babel/eslint-parser","@vue/cli-plugin-babel","@vue/cli-plugin-eslint","autoprefixer","postcss","tailwindcss"]
