@@ -59,7 +59,7 @@
 
 <script>
 import { isEventPassed } from "@/helper/event";
-import { getEventList } from '@/data/path/event'
+import { getEventList } from '@/data/event'
 export default {
   name: "content-container",
   data() {

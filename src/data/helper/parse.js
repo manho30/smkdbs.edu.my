@@ -8,17 +8,16 @@
 
 /**
  * @Description : Return result from Object
- * @param {Object}
  * @returns {Array}
- * @public
+ * @param data
+ * @private
  */
-function parseList (data){
+function _parseList (data){
+    console.log(data);
     return data.result ? data.result : [];
 }
 
-export {
-    parseList,
-}
+export default _parseList;
 
 
 

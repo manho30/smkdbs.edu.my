@@ -13,7 +13,8 @@ import axios from "axios";
  * @param url
  * @param method
  * @param data
- * @returns {Promise<AxiosResponse<T>>}
+ * @returns {Promise<AxiosResponse<>>}
+ * @private
  */
 export default function _request(url, method, data) {
     return axios({
